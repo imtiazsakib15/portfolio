@@ -10,9 +10,12 @@ const Navbar = () => {
     </>
   );
   return (
-    <>
-      <div className="navbar justify-between max-w-7xl mx-auto">
-        <div className="">
+    <div className="shadow-md">
+      <div className="navbar justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex justify-between">
+          <div>
+            <a className="text-xl font-mono">Imtiaz Ahmed Sakib</a>
+          </div>
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -37,13 +40,12 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="text-xl">Imtiaz Ahmed Sakib</a>
         </div>
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
