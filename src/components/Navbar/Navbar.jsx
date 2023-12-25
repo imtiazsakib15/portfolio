@@ -7,6 +7,9 @@ const Navbar = () => {
       <li>
         <a>Projects</a>
       </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
     </>
   );
   return (
