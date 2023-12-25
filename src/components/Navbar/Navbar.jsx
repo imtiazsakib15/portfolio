@@ -2,7 +2,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <a>About</a>
+        <a href="#skills">Skills</a>
       </li>
       <li>
         <a>Projects</a>

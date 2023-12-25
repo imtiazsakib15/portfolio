@@ -16,7 +16,7 @@ import Vercel from "../../assets/icons/Vercel.svg";
 
 const Skills = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
+    <div id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
         Skills
       </h1>
