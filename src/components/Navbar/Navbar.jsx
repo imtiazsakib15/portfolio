@@ -4,8 +4,8 @@ const Navbar = () => {
       <li>
         <a href="#skills">Skills</a>
       </li>
-      <li href="#projects">
-        <a>Projects</a>
+      <li>
+        <a href="#projects">Projects</a>
       </li>
       <li>
         <a href="#contact">Contact</a>

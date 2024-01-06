@@ -11,9 +11,13 @@ const Banner = () => {
           <h4 className="text-white text-lg sm:text-xl lg:text-2xl font-semibold mt-2">
             Frontend Web Developer
           </h4>
-          <button className="text-white font-bold border border-cyan-300 hover:bg-cyan-700 px-6 py-2 mt-6">
+          <a
+            href="/src/assets/portfolio/Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+            className="text-white font-bold border border-cyan-300 hover:bg-cyan-700 px-6 py-2 mt-6 block w-max"
+            download="Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+          >
             Download Resume
-          </button>
+          </a>
         </div>
         <div className="hidden sm:block sm:w-5/12">
           <img className="-mb-14" src={myPhoto} alt="My Photo" />

@@ -38,7 +38,7 @@ const Projects = () => {
             <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
             JS, Mongoose
           </p>
-          <div className="space-x-3 pt-3">
+          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
             <a
               href="https://med-camp-hub.web.app"
               className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
@@ -83,7 +83,7 @@ const Projects = () => {
             <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
             JS, MongoDB
           </p>
-          <div className="space-x-3 pt-3">
+          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
             <a
               href="https://nextechy-97707.web.app"
               className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
@@ -131,7 +131,7 @@ const Projects = () => {
             <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
             JS, MongoDB
           </p>
-          <div className="space-x-3 pt-3">
+          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
             <a
               href="https://electra-2351c.web.app"
               className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"

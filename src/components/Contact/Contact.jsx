@@ -3,6 +3,8 @@ import contact from "../../assets/contact.json";
 import { useForm } from "react-hook-form";
 import { MdErrorOutline } from "react-icons/md";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Contact = () => {
   const {
@@ -11,10 +13,25 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const form = useRef();
 
   const onSubmit = () => {
-    toast.success("Message Sent Successfully!");
-    reset();
+    emailjs
+      .sendForm(
+        "service_6rgati8",
+        "template_n0qbg7n",
+        form.current,
+        "f_8k4uCWdGqFAqTi4"
+      )
+      .then(
+        () => {
+          toast.success("Message Sent Successfully!");
+          reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -27,51 +44,56 @@ const Contact = () => {
           <Lottie animationData={contact} loop={false} />
         </div>
         <div className="sm:w-1/2">
-          <form className="pb-10" onSubmit={handleSubmit(onSubmit)} noValidate>
+          <form
+            className="pb-10"
+            ref={form}
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+          >
             <div className="mb-6">
               <label
-                htmlFor="name"
+                htmlFor="user_name"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
                 Your Name
               </label>
               <input
                 type="text"
-                id="name"
-                {...register("name", {
+                id="user_name"
+                {...register("user_name", {
                   required: "Name is required.",
                 })}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
               />
               <p>
-                {errors.name && (
+                {errors.user_name && (
                   <span className="text-red-600 text-xs flex items-center gap-0.5">
                     <MdErrorOutline />
-                    {errors.name?.message}
+                    {errors.user_name?.message}
                   </span>
                 )}
               </p>
             </div>
             <div className="mb-6">
               <label
-                htmlFor="target_audience"
+                htmlFor="user_email"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
                 Your Email
               </label>
               <input
-                type="text"
-                id="email"
-                {...register("email", {
+                type="email"
+                id="user_email"
+                {...register("user_email", {
                   required: "Email is required.",
                 })}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
               />
               <p>
-                {errors.email && (
+                {errors.user_email && (
                   <span className="text-red-600 text-xs flex items-center gap-0.5">
                     <MdErrorOutline />
-                    {errors.email?.message}
+                    {errors.user_email?.message}
                   </span>
                 )}
               </p>
