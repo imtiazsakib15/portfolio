@@ -12,11 +12,11 @@ const Projects = () => {
         Projects
       </h1>
       <hr />
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4">
-        <div className="w-full sm:w-1/3">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
+        <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={medCampHub} alt="" />
         </div>
-        <div className="w-full sm:w-2/3 sm:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             MedCamp Hub{" "}
             <span className="font-normal">
@@ -61,11 +61,11 @@ const Projects = () => {
         </div>
       </div>
       <hr />
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4">
-        <div className="w-full sm:w-1/3">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
+        <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={nexTechy} alt="" />
         </div>
-        <div className="w-full sm:w-2/3 sm:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             NexTechy <span className="font-normal">(Blogging Website)</span>
           </h2>
@@ -106,11 +106,11 @@ const Projects = () => {
         </div>
       </div>
       <hr />
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 p-4">
-        <div className="w-full sm:w-1/3">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
+        <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={electra} alt="" />
         </div>
-        <div className="w-full sm:w-2/3 sm:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             Electra{" "}
             <span className="font-normal">

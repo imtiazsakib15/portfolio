@@ -11,13 +11,21 @@ const Banner = () => {
           <h4 className="text-white text-lg sm:text-xl lg:text-2xl font-semibold mt-2">
             Frontend Web Developer
           </h4>
-          <a
-            href="/src/assets/portfolio/Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
-            className="text-white font-bold border border-cyan-300 hover:bg-cyan-700 px-6 py-2 mt-6 block w-max"
-            download="Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
-          >
-            Download Resume
-          </a>
+          <div className="sm:flex gap-5">
+            <a
+              href="/src/assets/portfolio/Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+              className="text-white font-bold border border-cyan-300 hover:bg-cyan-700 px-6 py-2 mt-6 block w-max mx-auto sm:mx-0"
+              download="Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+            >
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="text-white font-bold border border-cyan-300 bg-cyan-700 hover:bg-transparent px-6 py-2 mt-6 block w-max mx-auto sm:mx-0"
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
         <div className="hidden sm:block sm:w-5/12">
           <img className="-mb-14" src={myPhoto} alt="My Photo" />

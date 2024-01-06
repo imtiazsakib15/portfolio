@@ -40,7 +40,7 @@ const Contact = () => {
         Contact
       </h1>
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-        <div className="w-80 mx-auto sm:w-1/2">
+        <div className="w-72 mx-auto sm:w-1/2">
           <Lottie animationData={contact} loop={false} />
         </div>
         <div className="sm:w-1/2">
