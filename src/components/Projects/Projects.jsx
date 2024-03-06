@@ -16,7 +16,7 @@ const Projects = () => {
         <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={medCampHub} alt="" />
         </div>
-        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             MedCamp Hub{" "}
             <span className="font-normal">
@@ -47,7 +47,7 @@ const Projects = () => {
             </a>
             <a
               href="https://github.com/imtiazsakib15/med-camp-hub-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 hover:bg-white text-white hover:text-black rounded-full font-semibold"
+              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
             >
               Client Side Code
             </a>
@@ -65,7 +65,7 @@ const Projects = () => {
         <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={nexTechy} alt="" />
         </div>
-        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             NexTechy <span className="font-normal">(Blogging Website)</span>
           </h2>
@@ -80,8 +80,8 @@ const Projects = () => {
             </ol>
           </div>
           <p>
-            <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
-            JS, MongoDB
+            <b>Technologies used:</b> JavaScript, React, Tailwind CSS, React
+            Hook Form, Express JS, MongoDB
           </p>
           <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
             <a
@@ -92,7 +92,7 @@ const Projects = () => {
             </a>
             <a
               href="https://github.com/imtiazsakib15/nexTechy-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 hover:bg-white text-white hover:text-black rounded-full font-semibold"
+              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
             >
               Client Side Code
             </a>
@@ -110,7 +110,7 @@ const Projects = () => {
         <div className="w-full md:w-1/3">
           <img className="w-full aspect-video" src={electra} alt="" />
         </div>
-        <div className="w-full md:w-2/3 md:border-l p-4 space-y-3">
+        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
           <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
             Electra{" "}
             <span className="font-normal">
@@ -140,7 +140,7 @@ const Projects = () => {
             </a>
             <a
               href="https://github.com/imtiazsakib15/electra-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 hover:bg-white text-white hover:text-black rounded-full font-semibold"
+              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
             >
               Client Side Code
             </a>

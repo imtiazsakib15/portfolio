@@ -53,7 +53,7 @@ const Contact = () => {
             <div className="mb-6">
               <label
                 htmlFor="user_name"
-                className="block mb-2 text-sm font-medium text-gray-900 "
+                className="block mb-2 text-sm font-medium text-gray-300 "
               >
                 Your Name
               </label>
@@ -67,7 +67,7 @@ const Contact = () => {
               />
               <p>
                 {errors.user_name && (
-                  <span className="text-red-600 text-xs flex items-center gap-0.5">
+                  <span className="text-red-500 text-xs flex items-center gap-0.5">
                     <MdErrorOutline />
                     {errors.user_name?.message}
                   </span>
@@ -77,7 +77,7 @@ const Contact = () => {
             <div className="mb-6">
               <label
                 htmlFor="user_email"
-                className="block mb-2 text-sm font-medium text-gray-900 "
+                className="block mb-2 text-sm font-medium text-gray-300 "
               >
                 Your Email
               </label>
@@ -91,7 +91,7 @@ const Contact = () => {
               />
               <p>
                 {errors.user_email && (
-                  <span className="text-red-600 text-xs flex items-center gap-0.5">
+                  <span className="text-red-500 text-xs flex items-center gap-0.5">
                     <MdErrorOutline />
                     {errors.user_email?.message}
                   </span>
@@ -101,7 +101,7 @@ const Contact = () => {
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900"
+                className="block mb-2 text-sm font-medium text-gray-300"
               >
                 Your message
               </label>
@@ -115,7 +115,7 @@ const Contact = () => {
               ></textarea>
               <p>
                 {errors.message && (
-                  <span className="text-red-600 text-xs flex items-center gap-0.5">
+                  <span className="text-red-500 text-xs flex items-center gap-0.5">
                     <MdErrorOutline />
                     {errors.message?.message}
                   </span>

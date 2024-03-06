@@ -8,7 +8,7 @@ import Projects from "./components/Projects/Projects";
 
 function App() {
   return (
-    <>
+    <div className="bg-[#003566ff] text-white">
       <Navbar />
       <Banner />
       <Skills />
@@ -16,7 +16,7 @@ function App() {
       <Contact />
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
-    </>
+    </div>
   );
 }
 
