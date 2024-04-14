@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-10 sm:pb-12 lg:pb-16"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 sm:pt-12 lg:pt-16"
     >
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
         Projects

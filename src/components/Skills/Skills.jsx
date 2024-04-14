@@ -16,17 +16,28 @@ import Vercel from "../../assets/icons/Vercel.svg";
 
 const Skills = () => {
   return (
-    <div id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
+    <div
+      id="skills"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 sm:pt-12 lg:pt-16"
+    >
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
         Skills
       </h1>
       <Marquee>
         <img className="h-16 w-16 mr-6" src={HTML5} alt="HTML5 Logo" />
         <img className="h-16 w-16 mr-6" src={CSS3} alt="CSS3 Logo" />
-        <img className="h-16 w-16 mr-6" src={JavaScript} alt="JavaScript Logo" />
+        <img
+          className="h-16 w-16 mr-6"
+          src={JavaScript}
+          alt="JavaScript Logo"
+        />
         <img className="h-16 w-16 mr-6" src={React} alt="React Logo" />
         <img className="h-16 w-16 mr-6" src={Redux} alt="Redux Logo" />
-        <img className="h-16 w-16 mr-6" src={TailwindCSS} alt="TailwindCSS Logo" />
+        <img
+          className="h-16 w-16 mr-6"
+          src={TailwindCSS}
+          alt="TailwindCSS Logo"
+        />
         <img className="h-16 w-16 mr-6" src={Bootstrap} alt="Bootstrap Logo" />
         <img className="h-16 w-16 mr-6" src={Firebase} alt="Firebase Logo" />
         <img className="h-16 w-16 mr-6" src={ExpressJS} alt="ExpressJS Logo" />

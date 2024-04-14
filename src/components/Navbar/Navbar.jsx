@@ -1,17 +1,55 @@
+import { Link } from "react-scroll";
+
 const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <a href="#aboutMe">About Me</a>
+        <Link
+          activeClass="active"
+          to="aboutMe"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          About Me
+        </Link>
       </li>
       <li>
-        <a href="#skills">Skills</a>
+        <Link
+          activeClass="active"
+          to="skills"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          Skills
+        </Link>
       </li>
       <li>
-        <a href="#projects">Projects</a>
+        <Link
+          activeClass="active"
+          to="projects"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          Projects
+        </Link>
       </li>
       <li>
-        <a href="#contact">Contact</a>
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          Contact
+        </Link>
       </li>
     </>
   );
