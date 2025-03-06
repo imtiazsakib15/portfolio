@@ -6,18 +6,19 @@ const Banner = () => {
         <div className="text-center sm:text-left sm:w-7/12">
           <p className="font-semibold text-gray-300">Hi, I am</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-1 text-cyan-300">
-            Imtiaz Ahmed Sakib
+            Md. Imtiaz Ahmed Sakib
           </h2>
           <h4 className="text-white text-lg sm:text-xl lg:text-2xl font-semibold mt-2">
-            Frontend Web Developer
+            MERN Stack Web Developer
           </h4>
           <div className="sm:flex gap-5">
             <a
-              href="/src/assets/portfolio/Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+              href="https://drive.google.com/file/d/1-UoA7EKgB_Ep_5mF73l5_hzNFzrVXh40/view?usp=drive_link"
               className="text-white font-bold border border-cyan-300 hover:bg-cyan-700 px-6 py-2 mt-6 block w-max mx-auto sm:mx-0"
-              download="Resume of Imtiaz Ahmed Sakib(Frontend Web Developer).pdf"
+              target="_blank"
+              rel="noreferrer"
             >
-              Download Resume
+              My Resume
             </a>
             <a
               href="#contact"
