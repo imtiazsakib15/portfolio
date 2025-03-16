@@ -1,53 +1,40 @@
-import Marquee from "react-fast-marquee";
-import HTML5 from "../../assets/icons/HTML5.svg";
-import CSS3 from "../../assets/icons/CSS3.svg";
-import JavaScript from "../../assets/icons/JavaScript.svg";
-import React from "../../assets/icons/React-Dark.svg";
-import Redux from "../../assets/icons/Redux.svg";
-import TailwindCSS from "../../assets/icons/TailwindCSS.svg";
-import Bootstrap from "../../assets/icons/Bootstrap.svg";
-import Firebase from "../../assets/icons/Firebase.svg";
-import ExpressJS from "../../assets/icons/ExpressJS.svg";
-import MongoDB from "../../assets/icons/MongoDB.svg";
-import VSCode from "../../assets/icons/VSCode.svg";
-import Github from "../../assets/icons/Github.svg";
-import Figma from "../../assets/icons/Figma.svg";
-import Vercel from "../../assets/icons/Vercel.svg";
+import { SKILLS } from "../../constants/skills.constant";
+import Title from "../shared/Title";
 
 const Skills = () => {
   return (
-    <div
-      id="skills"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 sm:pt-12 lg:pt-16"
-    >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
-        Skills
-      </h1>
-      <Marquee>
-        <img className="h-16 w-16 mr-6" src={HTML5} alt="HTML5 Logo" />
-        <img className="h-16 w-16 mr-6" src={CSS3} alt="CSS3 Logo" />
-        <img
-          className="h-16 w-16 mr-6"
-          src={JavaScript}
-          alt="JavaScript Logo"
+    <section id="skills" className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Title
+          title="Technical Skills"
+          subtitle="Tools & technologies I use to bring ideas to life"
         />
-        <img className="h-16 w-16 mr-6" src={React} alt="React Logo" />
-        <img className="h-16 w-16 mr-6" src={Redux} alt="Redux Logo" />
-        <img
-          className="h-16 w-16 mr-6"
-          src={TailwindCSS}
-          alt="TailwindCSS Logo"
-        />
-        <img className="h-16 w-16 mr-6" src={Bootstrap} alt="Bootstrap Logo" />
-        <img className="h-16 w-16 mr-6" src={Firebase} alt="Firebase Logo" />
-        <img className="h-16 w-16 mr-6" src={ExpressJS} alt="ExpressJS Logo" />
-        <img className="h-16 w-16 mr-6" src={MongoDB} alt="MongoDB Logo" />
-        <img className="h-16 w-16 mr-6" src={VSCode} alt="VSCode Logo" />
-        <img className="h-16 w-16 mr-6" src={Github} alt="Github Logo" />
-        <img className="h-16 w-16 mr-6" src={Figma} alt="Figma Logo" />
-        <img className="h-16 w-16 mr-6" src={Vercel} alt="Vercel Logo" />
-      </Marquee>
-    </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 py-8">
+          {SKILLS.map((skill, index) => (
+            <div
+              key={index}
+              className="group relative flex flex-col items-center p-6 bg-[#002240]/50 rounded-xl hover:bg-[#002240] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-900/20"
+            >
+              <div className="mb-4 p-3 bg-[#003566]/50 rounded-lg group-hover:bg-[#003566] transition-colors">
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="h-12 w-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <span className="text-cyan-200 text-sm font-medium text-center">
+                {skill.name}
+              </span>
+
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-xl border border-cyan-900/30 group-hover:border-cyan-400/50 transition-all duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-[inset_0_0_20px_rgba(34,211,238,0.1)]" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
