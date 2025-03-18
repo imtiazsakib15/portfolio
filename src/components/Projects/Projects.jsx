@@ -1,160 +1,106 @@
-import medCampHub from "../../assets/med-camp-hub.png";
-import nexTechy from "../../assets/nexTechy.png";
-import electra from "../../assets/electra.png";
+import { FiExternalLink, FiGithub, FiServer } from "react-icons/fi";
+import { PROJECTS } from "../../constants/projects.constant";
+import Title from "../shared/Title";
 
 const Projects = () => {
   return (
-    <div
-      id="projects"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 sm:pt-12 lg:pt-16"
-    >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
-        Projects
-      </h1>
-      <hr />
-      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
-        <div className="w-full md:w-1/3">
-          <img className="w-full aspect-video" src={medCampHub} alt="" />
-        </div>
-        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
-            MedCamp Hub{" "}
-            <span className="font-normal">
-              (Medical Camp Management System)
-            </span>
-          </h2>
-          <div>
-            <b>Key Features:</b>
-            <ol className="list-decimal pl-10">
-              <li>Any user can take chat support from the home page.</li>
-              <li>A user can see 6 popular camps on the home page.</li>
-              <li>
-                A participant can join any camp by registering with necessary
-                information.
-              </li>
-            </ol>
-          </div>
-          <p>
-            <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
-            JS, Mongoose
-          </p>
-          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
-            <a
-              href="https://med-camp-hub.web.app"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
+    <section id="projects" className="py-16 bg-[#003566ff]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Title
+          title="Projects"
+          subtitle="Crafting User-Centric Web Experiences"
+        />
+
+        <div className="space-y-8">
+          {PROJECTS.map((project, index) => (
+            <div
+              key={index}
+              className="group relative bg-[#002240]/50 rounded-2xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all overflow-hidden"
             >
-              Live Demo
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/med-camp-hub-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
-            >
-              Client Side Code
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/med-camp-hub-server"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
-            >
-              Server Side Code
-            </a>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
-        <div className="w-full md:w-1/3">
-          <img className="w-full aspect-video" src={nexTechy} alt="" />
-        </div>
-        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
-            NexTechy <span className="font-normal">(Blogging Website)</span>
-          </h2>
-          <div>
-            <b>Key Features:</b>
-            <ol className="list-decimal pl-10">
-              <li>A user can search blogs by title, and category.</li>
-              <li>
-                A user can add a blog to the wishlist for reading in the future.
-              </li>
-              <li>A user can comment on every blog.</li>
-            </ol>
-          </div>
-          <p>
-            <b>Technologies used:</b> JavaScript, React, Tailwind CSS, React
-            Hook Form, Express JS, MongoDB
-          </p>
-          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
-            <a
-              href="https://nextechy-97707.web.app"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
-            >
-              Live Demo
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/nexTechy-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
-            >
-              Client Side Code
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/nexTechy-server"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
-            >
-              Server Side Code
-            </a>
-          </div>
+              <div className="flex flex-col lg:flex-row gap-8 p-8">
+                <div className="lg:w-2/5 relative overflow-hidden rounded-xl">
+                  <img
+                    src={project.img}
+                    alt={project.name}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#002240] via-transparent to-transparent" />
+                </div>
+
+                <div className="lg:w-3/5 space-y-4">
+                  <h3 className="text-2xl font-bold text-cyan-400">
+                    {project.name}
+                    <span className="block text-gray-300 text-lg font-normal mt-1">
+                      {project.subtitle}
+                    </span>
+                  </h3>
+
+                  <div className="space-y-2">
+                    <h4 className="text-cyan-400 font-semibold">
+                      Key Features:
+                    </h4>
+                    <ul className="space-y-2 pl-4">
+                      {project.features.map((feature, i) => (
+                        <li key={i} className="flex items-start text-gray-300">
+                          <span className="text-cyan-400 mr-2">▹</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h4 className="text-cyan-400 font-semibold">Tech Stack:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-5 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-all"
+                    >
+                      <FiExternalLink className="text-lg" />
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.client}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-5 py-2 border border-cyan-600 text-cyan-400 hover:bg-cyan-600/10 rounded-lg transition-all"
+                    >
+                      <FiGithub className="text-lg" />
+                      Client Code
+                    </a>
+                    <a
+                      href={project.server}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-5 py-2 border border-cyan-600 text-cyan-400 hover:bg-cyan-600/10 rounded-lg transition-all"
+                    >
+                      <FiServer className="text-lg" />
+                      Server Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            </div>
+          ))}
         </div>
       </div>
-      <hr />
-      <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
-        <div className="w-full md:w-1/3">
-          <img className="w-full aspect-video" src={electra} alt="" />
-        </div>
-        <div className="w-full md:w-2/3 md:border-l text-gray-300 p-4 space-y-3">
-          <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
-            Electra{" "}
-            <span className="font-normal">
-              (Electrical Product Selling Website)
-            </span>
-          </h2>
-          <div>
-            <b>Key Features:</b>
-            <ol className="list-decimal pl-10">
-              <li>A user can search blogs by title, and category.</li>
-              <li>
-                A user can add a blog to the wishlist for reading in the future.
-              </li>
-              <li>A user can comment on every blog.</li>
-            </ol>
-          </div>
-          <p>
-            <b>Technologies used:</b> JavaScript, React, Tailwind CSS, Express
-            JS, MongoDB
-          </p>
-          <div className="sm:space-x-3 space-y-3 sm:space-y-0 w-max flex flex-col sm:flex-row pt-3">
-            <a
-              href="https://electra-2351c.web.app"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
-            >
-              Live Demo
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/electra-client"
-              className="px-4 py-2 border-2 border-cyan-600 bg-cyan-600 text-white hover:bg-transparent hover:text-gray-300 rounded-full font-semibold"
-            >
-              Client Side Code
-            </a>
-            <a
-              href="https://github.com/imtiazsakib15/electra-server"
-              className="px-4 py-2 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white rounded-full font-semibold"
-            >
-              Server Side Code
-            </a>
-          </div>
-        </div>
-      </div>
-      <hr />
-    </div>
+    </section>
   );
 };
 
