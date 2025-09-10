@@ -17,7 +17,7 @@ const Banner = () => {
               <div className="space-y-8 relative">
                 <div className="pl-8 border-l-4 border-cyan-400">
                   <p className="text-cyan-400 font-mono text-lg mb-2">
-                    MERN Stack Developer
+                    Full Stack Developer
                   </p>
                   <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                     Md. Imtiaz Ahmed
@@ -34,7 +34,7 @@ const Banner = () => {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="https://drive.google.com/file/d/1-UoA7EKgB_Ep_5mF73l5_hzNFzrVXh40/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1kRO5PARCuYSiEHVto6Vza1Fne4IHU_Dd/view?usp=drive_link"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-6 py-3 rounded-lg transition-all font-medium bg-cyan-600 text-white hover:bg-cyan-700"
@@ -50,13 +50,17 @@ const Banner = () => {
                 </div>
               </div>
 
-              <div className="relative group max-w-2xl mx-auto lg:mx-0">
-                <div className="flex flex-col lg:flex-row items-center gap-8">
-                  <img
-                    src={myPhoto}
-                    alt="Imtiaz Ahmed Sakib"
-                    className="relative z-10 w-full h-full object-cover -mb-8"
-                  />
+              <div className="relative flex justify-center lg:justify-end">
+                <div className="relative w-64 h-64 group">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
+
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-cyan-400/30 hover:border-cyan-400/50 transition-all">
+                    <img
+                      src={myPhoto}
+                      alt="Imtiaz Ahmed Sakib"
+                      className="w-full h-full -ml-1 transform scale-[140%] group-hover:scale-[144%] transition-transform"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
