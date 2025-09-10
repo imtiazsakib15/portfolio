@@ -3,8 +3,8 @@ import Title from "../shared/Title";
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 bg-[#001d3d]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <Title
           title="Technical Skills"
           subtitle="Tools & technologies I use to bring ideas to life"
@@ -27,7 +27,6 @@ const Skills = () => {
                 {skill.name}
               </span>
 
-              {/* Hover Glow Effect */}
               <div className="absolute inset-0 rounded-xl border border-cyan-900/30 group-hover:border-cyan-400/50 transition-all duration-300 pointer-events-none" />
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-[inset_0_0_20px_rgba(34,211,238,0.1)]" />
             </div>
