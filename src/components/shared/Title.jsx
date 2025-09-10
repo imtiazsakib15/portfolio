@@ -7,7 +7,9 @@ const Title = ({ title, subtitle }) => {
           {title}
         </span>
       </h2>
-      <p className="text-cyan-100 max-w-2xl mx-auto text-lg">{subtitle}</p>
+      <p className="text-cyan-100 max-w-2xl mx-auto text-lg mt-1.5">
+        {subtitle}
+      </p>
     </div>
   );
 };

@@ -18,7 +18,7 @@ import VSCode from "../assets/icons/VSCode.svg";
 import Github from "../assets/icons/Github.svg";
 import Postman from "../assets/icons/Postman.svg";
 import Figma from "../assets/icons/Figma.svg";
-import Vercel from "../assets/icons/Vercel.svg";
+import npm from "../assets/icons/Npm-Dark.svg";
 
 export const SKILLS = [
   { icon: HTML5, name: "HTML5" },
@@ -31,15 +31,15 @@ export const SKILLS = [
   { icon: TailwindCSS, name: "Tailwind CSS" },
   { icon: Bootstrap, name: "Bootstrap" },
   { icon: NodeJS, name: "Node.js" },
-  { icon: Firebase, name: "Firebase" },
   { icon: ExpressJS, name: "Express.js" },
   { icon: NestJS, name: "NestJS" },
   { icon: PostgreSQL, name: "PostgreSQL" },
   { icon: MongoDB, name: "MongoDB" },
   { icon: Prisma, name: "Prisma" },
+  { icon: Firebase, name: "Firebase" },
   { icon: VSCode, name: "VS Code" },
   { icon: Github, name: "GitHub" },
   { icon: Postman, name: "Postman" },
   { icon: Figma, name: "Figma" },
-  { icon: Vercel, name: "Vercel" },
+  { icon: npm, name: "npm" },
 ];
