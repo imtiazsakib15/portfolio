@@ -1,140 +1,185 @@
-import Lottie from "lottie-react";
-import contact from "../../assets/contact.json";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { MdErrorOutline } from "react-icons/md";
-import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Contact = () => {
+  const form = useRef(null);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState("");
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  const form = useRef();
 
-  const onSubmit = () => {
-    emailjs
-      .sendForm(
+  const onSubmit = async () => {
+    if (!form.current) {
+      setSubmitError("The message form is unavailable. Please email me directly.");
+      return;
+    }
+
+    setSending(true);
+    setSubmitError("");
+    setSubmitSuccess("");
+
+    try {
+      await emailjs.sendForm(
         "service_6rgati8",
         "template_n0qbg7n",
         form.current,
         "f_8k4uCWdGqFAqTi4"
-      )
-      .then(
-        () => {
-          toast.success("Message Sent Successfully!");
-          reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+      reset();
+      setSubmitSuccess("Thanks - your message has been sent.");
+    } catch (error) {
+      console.error("EmailJS message submission failed:", error);
+      setSubmitError(
+        "Your message could not be sent right now. Please try again or email me directly."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
-    <div
-      id="contact"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 sm:pt-12 lg:pt-16"
-    >
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 border-l-4 border-cyan-600 pl-2 w-max mx-auto">
-        Contact
-      </h1>
-      <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-        <div className="w-72 mx-auto sm:w-1/2">
-          <Lottie animationData={contact} loop={false} />
-        </div>
-        <div className="sm:w-1/2">
-          <form
-            className="pb-10"
-            ref={form}
-            onSubmit={handleSubmit(onSubmit)}
-            noValidate
-          >
-            <div className="mb-6">
-              <label
-                htmlFor="user_name"
-                className="block mb-2 text-sm font-medium text-gray-300 "
-              >
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="user_name"
-                {...register("user_name", {
-                  required: "Name is required.",
-                })}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
-              />
-              <p>
-                {errors.user_name && (
-                  <span className="text-red-500 text-xs flex items-center gap-0.5">
-                    <MdErrorOutline />
-                    {errors.user_name?.message}
-                  </span>
-                )}
-              </p>
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="user_email"
-                className="block mb-2 text-sm font-medium text-gray-300 "
-              >
-                Your Email
-              </label>
-              <input
-                type="email"
-                id="user_email"
-                {...register("user_email", {
-                  required: "Email is required.",
-                })}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5"
-              />
-              <p>
-                {errors.user_email && (
-                  <span className="text-red-500 text-xs flex items-center gap-0.5">
-                    <MdErrorOutline />
-                    {errors.user_email?.message}
-                  </span>
-                )}
-              </p>
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-300"
-              >
-                Your message
-              </label>
-              <textarea
-                id="message"
-                rows="4"
-                {...register("message", {
-                  required: "Message is required.",
-                })}
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-              ></textarea>
-              <p>
-                {errors.message && (
-                  <span className="text-red-500 text-xs flex items-center gap-0.5">
-                    <MdErrorOutline />
-                    {errors.message?.message}
-                  </span>
-                )}
-              </p>
-            </div>
-            <button
-              type="submit"
-              className="text-white bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+    <section className="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div className="page-shell contact-layout">
+        <div className="contact-copy">
+          <p className="eyebrow">Have something in mind?</p>
+          <h2 id="contact-title">
+            Let&apos;s make
+            <br />
+            <span>it happen.</span>
+          </h2>
+          <p className="contact-intro">
+            I&apos;m open to discussing thoughtful projects, opportunities, and
+            collaborations. Send a note and tell me what you&apos;re working on.
+          </p>
+          <a className="contact-email" href="mailto:sakib.imtiaz15@gmail.com">
+            <FiMail aria-hidden="true" />
+            sakib.imtiaz15@gmail.com
+            <FiArrowUpRight aria-hidden="true" />
+          </a>
+          <div className="contact-socials">
+            <a
+              href="https://github.com/imtiazsakib15"
+              target="_blank"
+              rel="noreferrer"
             >
-              Sent
-            </button>
-          </form>
+              <FiGithub aria-hidden="true" /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/imtiaz-ahmed-sakib"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FiLinkedin aria-hidden="true" /> LinkedIn
+            </a>
+          </div>
         </div>
+
+        <form
+          className="contact-form"
+          ref={form}
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
+          <div className="form-field">
+            <label htmlFor="user_name">Your name</label>
+            <input
+              id="user_name"
+              type="text"
+              autoComplete="name"
+              maxLength={100}
+              aria-invalid={Boolean(errors.user_name)}
+              aria-describedby={errors.user_name ? "name-error" : undefined}
+              {...register("user_name", {
+                required: "Please enter your name.",
+                maxLength: {
+                  value: 100,
+                  message: "Please keep your name under 100 characters.",
+                },
+              })}
+            />
+            {errors.user_name && (
+              <p className="form-error" id="name-error" role="alert">
+                {errors.user_name.message}
+              </p>
+            )}
+          </div>
+          <div className="form-field">
+            <label htmlFor="user_email">Your email</label>
+            <input
+              id="user_email"
+              type="email"
+              autoComplete="email"
+              maxLength={254}
+              aria-invalid={Boolean(errors.user_email)}
+              aria-describedby={errors.user_email ? "email-error" : undefined}
+              {...register("user_email", {
+                required: "Please enter your email address.",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Please enter a valid email address.",
+                },
+                maxLength: {
+                  value: 254,
+                  message: "Please enter a shorter email address.",
+                },
+              })}
+            />
+            {errors.user_email && (
+              <p className="form-error" id="email-error" role="alert">
+                {errors.user_email.message}
+              </p>
+            )}
+          </div>
+          <div className="form-field">
+            <label htmlFor="message">What would you like to discuss?</label>
+            <textarea
+              id="message"
+              rows="4"
+              maxLength={3000}
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? "message-error" : undefined}
+              {...register("message", {
+                required: "Please add a short message.",
+                maxLength: {
+                  value: 3000,
+                  message: "Please keep your message under 3,000 characters.",
+                },
+              })}
+            />
+            {errors.message && (
+              <p className="form-error" id="message-error" role="alert">
+                {errors.message.message}
+              </p>
+            )}
+          </div>
+          {submitError && (
+            <p className="form-error form-submit-error" role="alert">
+              {submitError}
+            </p>
+          )}
+          <button
+            className="button button-primary form-submit"
+            type="submit"
+            disabled={sending}
+          >
+            {sending ? "Sending message..." : "Send a message"}
+            <FiArrowUpRight aria-hidden="true" />
+          </button>
+          <p className="form-note" aria-live="polite">
+            {sending
+              ? "Sending your message securely..."
+              : submitSuccess || "Your message goes straight to my inbox."}
+          </p>
+        </form>
       </div>
-    </div>
+    </section>
   );
 };
 

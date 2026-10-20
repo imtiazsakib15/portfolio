@@ -1,8 +1,31 @@
-# React + Vite
+# Imtiaz Ahmed Sakib - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page developer portfolio built with React 18 and Vite. It presents
+selected full-stack projects, grouped technologies, and contact links.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+npm install
+npm run dev
+```
+
+## Checks
+
+```sh
+npm run lint
+npm run build
+```
+
+## Deploy
+
+Firebase Hosting is configured to serve the production build from `dist`.
+
+```sh
+npm run build
+firebase deploy --only hosting
+```
+
+The contact form submits through the existing EmailJS service. Keep its service
+and template configuration aligned with the EmailJS project when updating the
+form.
